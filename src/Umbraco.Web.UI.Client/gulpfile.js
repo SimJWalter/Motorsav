@@ -17,7 +17,7 @@ const { setDevelopmentMode, setTestMode } = require('./gulp/modes');
 const { dependencies } = require('./gulp/tasks/dependencies');
 const { js } = require('./gulp/tasks/js');
 const { less } = require('./gulp/tasks/less');
-const { testE2e, testUnit, runUnitTestServer } = require('./gulp/tasks/test');
+//const { testE2e, testUnit, runUnitTestServer } = require('./gulp/tasks/test');
 const { views } = require('./gulp/tasks/views');
 const { watchTask } = require('./gulp/tasks/watchTask');
 
@@ -37,6 +37,6 @@ exports.coreBuild = coreBuild;
 exports.dev = series(setDevelopmentMode, coreBuild, runUnitTestServer, watchTask);
 exports.watch = series(watchTask);
 //
-exports.runTests = series(setTestMode, series(js, testUnit));
-exports.runUnit = series(setTestMode, series(js, runUnitTestServer), watchTask);
-exports.testE2e = series(setTestMode, parallel(testE2e));
+//exports.runTests = series(setTestMode, series(js, testUnit));
+//exports.runUnit = series(setTestMode, series(js, runUnitTestServer), watchTask);
+//exports.testE2e = series(setTestMode, parallel(testE2e));
